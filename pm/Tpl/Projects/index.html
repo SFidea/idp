@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>项目列表页-项目协作管理平台</title>
+<meta name="keywords" content="关键字" /> 
+<meta name="description" content="描述" /> 
+<link href="../Public/css/style.css" rel="stylesheet" type="text/css" ignoreapd="1" />
+</head>
+
+<body>
+<include file="Public:header" />
+<div id="b" role="main">
+	<h1 class="vh">项目列表页</h1>
+	<div class="w">
+		<div class="r r1 clearfix">
+			<div class="c c1 fl">
+				<!--新建设计版-->
+				<div class="m m4" role="region">
+					<div class="h">
+						<h2 class="vh">新建项目</h2>
+					</div>
+					<div class="b">
+						<span class="hover">
+							<a href="{:U('Projects/add')}" class="i i3 ir">新建</a>
+							<span class="s1">
+								<i class="i"></i>新建项目
+							</span>
+						</span>
+					</div>
+				</div>
+				<!--新建设计版-->
+			</div>
+			<div class="c c2 fr">
+				<volist id="vo" name="list">
+				<div class="m m5 fl" role="region">
+					<div class="h">
+						<h2>{$vo.title}</h2>
+						<div class="hr"><a href="#" class="i ir i4">添加收藏</a></div>
+					</div>
+					<div class="b">
+						<a href="{:U('Projects/board')}"><img src="../Public/images/project-default-thumb.png" alt=""></a>
+					</div>
+				</div>
+				</volist>				
+			</div>
+		</div>
+    </div>
+</div>
+<script src="../Public/js/jquery.min.js" ignoreapd="1"></script>
+<script>
+$(function(){
+	$('.m5 .i4').click(function(){
+		if($(this).hasClass('active')){
+			$(this).removeClass('active');	
+		}else{
+			$(this).addClass('active');		
+		}
+		return false;
+	})
+})
+</script>
+<!--[if IE 6]>
+<script src="js/DD_belatedPNG_0.0.8a-min.js" ignoreapd="1"></script>
+<script>
+	DD_belatedPNG.fix('');
+</script>
+<![endif]-->
+</body>
+</html>
